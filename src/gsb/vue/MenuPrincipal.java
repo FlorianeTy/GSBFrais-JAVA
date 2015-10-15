@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /*
  * Créé le 22 févr. 2015
  *
@@ -117,5 +118,10 @@ public class MenuPrincipal extends JFrame implements ActionListener {
 		myJInternalFrame.setSize(480, 380);
 		desktopPane.add(myJInternalFrame);
 	}
+=======
+package gsb.vue;
+
+public class MenuPrincipal {
+>>>>>>> branch 'master' of https://github.com/FlorianeTy/GSBFrais-JAVA.git
 
 }

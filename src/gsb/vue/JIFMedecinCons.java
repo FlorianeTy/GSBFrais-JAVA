@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /*
  * Créé le 17 nov. 2014
  *
@@ -91,5 +92,10 @@ public class JIFMedecinCons extends JIFMedecin  implements ActionListener {
 				Medecin leMedecin = lesMedecins.get(indiceEnCours);
 		    	remplirText(leMedecin);		    	}
  } // fin actionPerformed
+=======
+package gsb.vue;
+
+public class JIFMedecinCons {
+>>>>>>> branch 'master' of https://github.com/FlorianeTy/GSBFrais-JAVA.git
 
 }

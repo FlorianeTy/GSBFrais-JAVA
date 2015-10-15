@@ -1,5 +1,6 @@
 package gsb.modele.dao;
 
+<<<<<<< HEAD
 
 /*
  * Créé le 23 sept. 2014
@@ -86,5 +87,8 @@ public class ConnexionMySql { // DAO = Data Access Object
 		try{cnx.close();}
 		catch(Exception e) {  System.out.println("Erreur sur fermeture connexion");  } 
 	}
+=======
+public class ConnexionMySql {
+>>>>>>> branch 'master' of https://github.com/FlorianeTy/GSBFrais-JAVA.git
 
 }

@@ -1,4 +1,9 @@
 /bin/
 /.settings/
+<<<<<<< HEAD
 /.classpath
 /.project
+=======
+/.project
+/.classpath
+>>>>>>> branch 'master' of https://github.com/FlorianeTy/GSBFrais-JAVA.git

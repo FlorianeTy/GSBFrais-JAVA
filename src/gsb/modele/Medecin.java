@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /*
  * Créé le 22 févr. 2015
  *
@@ -142,5 +143,10 @@ public class Medecin {
 	
 	
 	
+=======
+package gsb.modele;
+
+public class Medecin {
+>>>>>>> branch 'master' of https://github.com/FlorianeTy/GSBFrais-JAVA.git
 
 }

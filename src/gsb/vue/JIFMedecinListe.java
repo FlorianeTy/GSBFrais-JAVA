@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /*
  * Créé le 3 mars 2015
  *
@@ -100,4 +101,10 @@ public class JIFMedecinListe extends JInternalFrame implements ActionListener {
    			}
    		}	
 	}
+=======
+package gsb.vue;
+
+public class JIFMedecinListe {
+
+>>>>>>> branch 'master' of https://github.com/FlorianeTy/GSBFrais-JAVA.git
 }
