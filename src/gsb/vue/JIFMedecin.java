@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 /*
  * Créé le 22 mars 2012
  *
@@ -130,11 +130,4 @@ public class JIFMedecin extends JInternalFrame  {
      }
 
 
-    
-=======
-package gsb.vue;
-
-public class JIFMedecin {
-
->>>>>>> branch 'master' of https://github.com/FlorianeTy/GSBFrais-JAVA.git
 }

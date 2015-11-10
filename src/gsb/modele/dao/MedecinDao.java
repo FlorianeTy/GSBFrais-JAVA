@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 /*
  * Créé le 22 févr. 2015
  *
@@ -74,10 +74,5 @@ public class MedecinDao {
 		}
 		return diccoDesMedecins;
 	}
-=======
-package gsb.modele.dao;
-
-public class MedecinDao {
->>>>>>> branch 'master' of https://github.com/FlorianeTy/GSBFrais-JAVA.git
 
 }

@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 /*
  * Créé le 22 févr. 2015
  *
@@ -48,10 +47,5 @@ public class Localite {
 	public void setVille(String ville) {
 		this.ville = ville;
 	}
-=======
-package gsb.modele;
-
-public class Localite {
->>>>>>> branch 'master' of https://github.com/FlorianeTy/GSBFrais-JAVA.git
 
 }

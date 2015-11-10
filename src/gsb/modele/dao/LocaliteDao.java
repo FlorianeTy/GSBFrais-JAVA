@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 /*
  * Créé le 22 févr. 2015
  *
@@ -35,10 +35,5 @@ public class LocaliteDao {
 		ConnexionMySql.fermerConnexionBd();
 		return uneLocalite;
 	}
-=======
-package gsb.modele.dao;
-
-public class LocaliteDao {
->>>>>>> branch 'master' of https://github.com/FlorianeTy/GSBFrais-JAVA.git
 
 }

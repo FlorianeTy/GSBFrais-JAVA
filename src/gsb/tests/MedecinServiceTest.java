@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 /*
  * Créé le 23 févr. 2015
  *
@@ -32,10 +32,4 @@ public class MedecinServiceTest {
 		return unMedecin;
 	}
 	
-=======
-package gsb.tests;
-
-public class MedecinServiceTest {
-
->>>>>>> branch 'master' of https://github.com/FlorianeTy/GSBFrais-JAVA.git
 }
