@@ -1,17 +1,19 @@
 package gsb.modele;
 
+import java.util.ArrayList;
+
 public class Stockage {
 	protected String StockReference;
 	protected String StockDepotLegal;
 	protected String StockQtite;
-	
+	protected ArrayList<Stockage> lesStocks;
 	
 	public Stockage(String StockReference, String StockDepotLegal, String StockQtite) {
 		
 		this.StockReference = StockReference;
 		this.StockDepotLegal = StockDepotLegal;
 		this.StockQtite = StockQtite;
-		
+		lesStocks = new ArrayList<Stockage>();
 	}
 
 
@@ -44,7 +46,14 @@ public class Stockage {
 		StockQtite = stockQtite;
 	}
 
+	public ArrayList<Stockage> getLesStocks() {
+		return lesStocks;
+	}
+
 	
+	public void setLesStocks(ArrayList<Stockage> lesStocks) {
+		this.lesStocks = lesStocks;
+	}
 	
 	
 }
