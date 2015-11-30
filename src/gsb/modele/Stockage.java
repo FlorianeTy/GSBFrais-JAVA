@@ -2,48 +2,31 @@ package gsb.modele;
 
 import java.util.ArrayList;
 
+import gsb.modele.Medicament;
+import gsb.modele.Visiteur;
+
 public class Stockage {
-	protected String StockReference;
-	protected String StockDepotLegal;
-	protected String StockQtite;
+
+	protected int stockQtite;
 	protected ArrayList<Stockage> lesStocks;
+	public Medicament unMedicament;
+	public Visiteur unVisiteur;
 	
-	public Stockage(String StockReference, String StockDepotLegal, String StockQtite) {
-		
-		this.StockReference = StockReference;
-		this.StockDepotLegal = StockDepotLegal;
-		this.StockQtite = StockQtite;
+	public Stockage(int stockQtite, Medicament unMedicament, Visiteur unVisiteur) {
+	
+		this.stockQtite = stockQtite;
+		this.unMedicament = unMedicament;
+		this.unVisiteur = unVisiteur;
 		lesStocks = new ArrayList<Stockage>();
 	}
 
-
-	public String getStockReference() {
-		return StockReference;
+	public int getStockQtite() {
+		return stockQtite;
 	}
 
 
-	public void setStockReference(String stockReference) {
-		StockReference = stockReference;
-	}
-
-
-	public String getStockDepotLegal() {
-		return StockDepotLegal;
-	}
-
-
-	public void setStockDepotLegal(String stockDepotLegal) {
-		StockDepotLegal = stockDepotLegal;
-	}
-
-
-	public String getStockQtite() {
-		return StockQtite;
-	}
-
-
-	public void setStockQtite(String stockQtite) {
-		StockQtite = stockQtite;
+	public void setStockQtite(int stockQtite) {
+		this.stockQtite = stockQtite;
 	}
 
 	public ArrayList<Stockage> getLesStocks() {
@@ -53,6 +36,22 @@ public class Stockage {
 	
 	public void setLesStocks(ArrayList<Stockage> lesStocks) {
 		this.lesStocks = lesStocks;
+	}
+
+	public Medicament getUnMedicament() {
+		return unMedicament;
+	}
+
+	public void setUnMedicament(Medicament unMedicament) {
+		this.unMedicament = unMedicament;
+	}
+
+	public Visiteur getUnVisiteur() {
+		return unVisiteur;
+	}
+
+	public void setUnVisiteur(Visiteur unVisiteur) {
+		this.unVisiteur = unVisiteur;
 	}
 	
 	

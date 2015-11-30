@@ -1,5 +1,7 @@
 package gsb.modele;
 
+import java.util.ArrayList;
+
 public class Medicament {
 	protected String depotLegal;
 	protected String nomCommercial;
@@ -9,21 +11,22 @@ public class Medicament {
 	protected float  prixEchantillon;
 	protected String codeFamille;
 	protected String libelleFamille;
+	protected ArrayList<Medicament> lesMedicaments;
 	
 	public Medicament(String depotLegal, String nomCommercial, String composition, String effets,
-			String contreIndication, float prixEchantillon, String codeFamille, String libelleFamille) {
+			String contreIndication, String codeFamille, String libelleFamille) {
 		
 		this.depotLegal = depotLegal;
 		this.nomCommercial = nomCommercial;
 		this.composition = composition;
 		this.effets = effets;
 		this.contreIndication = contreIndication;
-		this.prixEchantillon = prixEchantillon;
 		this.codeFamille = codeFamille;
 		this.libelleFamille = libelleFamille;
+		lesMedicaments = new ArrayList<Medicament>();
 	}
 
-	public String getDepotLegal() {
+	public  String getDepotLegal() {
 		return depotLegal;
 	}
 
@@ -63,14 +66,6 @@ public class Medicament {
 		this.contreIndication = contreIndication;
 	}
 
-	public float getPrixEchantillon() {
-		return prixEchantillon;
-	}
-
-	public void setPrixEchantillon(float prixEchantillon) {
-		this.prixEchantillon = prixEchantillon;
-	}
-
 	public String getCodeFamille() {
 		return codeFamille;
 	}
@@ -87,5 +82,13 @@ public class Medicament {
 		this.libelleFamille = libelleFamille;
 	}
 	
+	public ArrayList<Medicament> getLesMedicaments() {
+		return lesMedicaments;
+	}
+
+	
+	public void setLesStocks(ArrayList<Medicament> lesMedicaments) {
+		this.lesMedicaments = lesMedicaments;
+	}
 	
 }

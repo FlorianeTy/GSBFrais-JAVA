@@ -28,7 +28,7 @@ public class MedecinDao {
 	public static Medecin rechercher(String codeMedecin){
 		Medecin unMedecin=null;
 		Localite uneLocalite= null;
-		ResultSet reqSelection = ConnexionMySql.execReqSelection("select * from MEDECIN where CODEMED ='"+codeMedecin+"'");
+		ResultSet reqSelection = ConnexionMySql.execReqSelection("select * from VISITEUR where MATRICULE ='"+codeMedecin+"'");
 		try {
 			if (reqSelection.next()) {
 				uneLocalite = LocaliteDao.rechercher(reqSelection.getString(5));
@@ -36,7 +36,7 @@ public class MedecinDao {
 			};
 			}
 		catch(Exception e) {
-			System.out.println("erreur reqSelection.next() pour la requête - select * from MEDECIN where CODEMED ='"+codeMedecin+"'");
+			System.out.println("erreur reqSelection.next() pour la requête - select * from VISITEUR where MATRICULE ='"+codeMedecin+"'");
 			e.printStackTrace();
 			}
 		ConnexionMySql.fermerConnexionBd();
@@ -45,7 +45,7 @@ public class MedecinDao {
 	
 	public static ArrayList<Medecin> retournerCollectionDesMedecins(){
 		ArrayList<Medecin> collectionDesMedecins = new ArrayList<Medecin>();
-		ResultSet reqSelection = ConnexionMySql.execReqSelection("select CODEMED from MEDECIN");
+		ResultSet reqSelection = ConnexionMySql.execReqSelection("select MATRICULE from VISITEUR");
 		try{
 		while (reqSelection.next()) {
 			String codeMedecin = reqSelection.getString(1);
@@ -61,7 +61,7 @@ public class MedecinDao {
 	
 	public static HashMap<String,Medecin> retournerDictionnaireDesMedecins(){
 		HashMap<String, Medecin> diccoDesMedecins = new HashMap<String, Medecin>();
-		ResultSet reqSelection = ConnexionMySql.execReqSelection("select CODEMED from MEDECIN");
+		ResultSet reqSelection = ConnexionMySql.execReqSelection("select MATRICULE from VISITEUR");
 		try{
 		while (reqSelection.next()) {
 			String codeMedecin = reqSelection.getString(1);
