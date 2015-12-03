@@ -1,27 +1,15 @@
-
-/*
- * Créé le 22 mars 2012
- *
- * TODO Pour changer le modèle de ce fichier généré, allez à :
- * Fenêtre - Préférences - Java - Style de code - Modèles de code
- */
 package gsb.vue;
 
 import gsb.modele.Medecin;
 
 import java.awt.Container;
 import java.awt.GridLayout;
-import java.awt.event.ActionEvent;
-
 import javax.swing.JInternalFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 public class JIFMedecin extends JInternalFrame  {
-	/**
-	 * Commentaire pour <code>serialVersionUID</code>
-	 */
 	private static final long serialVersionUID = 1L;
 	protected JPanel p;  
 	protected JPanel pTexte;
@@ -30,14 +18,13 @@ public class JIFMedecin extends JInternalFrame  {
 
 	protected JLabel JLcode;
 	protected JLabel JLnom;
-	protected JLabel JLprenom;
+	protected JLabel JLprenom; 
 	protected JLabel JLadresse;
 	protected JLabel JLcp;
     protected JLabel JLville;
     protected JLabel JLtelephone;
     protected JLabel JLpotentiel;
-    protected JLabel JLspecialite
-    ;
+    protected JLabel JLspecialite;
     
 	protected JTextField JTcode;
 	protected JTextField JTnom;

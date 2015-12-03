@@ -11,8 +11,9 @@ public class Stockage {
 	protected ArrayList<Stockage> lesStocks;
 	public Medicament unMedicament;
 	public Visiteur unVisiteur;
+
 	
-	public Stockage(int stockQtite, Medicament unMedicament, Visiteur unVisiteur) {
+	public Stockage(Visiteur unVisiteur, Medicament unMedicament, int stockQtite ) {
 	
 		this.stockQtite = stockQtite;
 		this.unMedicament = unMedicament;

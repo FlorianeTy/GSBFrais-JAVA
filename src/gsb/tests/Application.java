@@ -100,7 +100,7 @@ public class Application extends JFrame implements ActionListener{
 				ouvrirFenetre(new JIFMedicamentListe(this));
 
 			} else if (ChoixOption.equals("Stock des Echantillons")) {
-				//ouvrirFenetre(new JIFEchantillonStock());
+				ouvrirFenetre(new JIFEchantillonStock(this));
 
 			} else if (ChoixOption.equals("Ajouter des Echantillons")) {
 				ouvrirFenetre(new JIFAjoutStock(this));
@@ -118,7 +118,7 @@ public class Application extends JFrame implements ActionListener{
 		myJInternalFrame.setResizable(false);
 		myJInternalFrame.setMaximizable(true);
 		myJInternalFrame.setClosable(true);
-		myJInternalFrame.setSize(480, 380);
+		myJInternalFrame.setSize(550, 450);
 		dp.add(myJInternalFrame);
 		myJInternalFrame.setVisible(true);
 	}

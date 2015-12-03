@@ -1,10 +1,4 @@
 
-/*
- * Créé le 17 nov. 2014
- *
- * TODO Pour changer le modèle de ce fichier généré, allez à :
- * Fenêtre - Préférences - Java - Style de code - Modèles de code
- */
 package gsb.vue;
 
 import gsb.modele.Medecin;
@@ -18,12 +12,6 @@ import javax.swing.JButton;
 import javax.swing.event.InternalFrameAdapter;
 import javax.swing.event.InternalFrameEvent;
 
-/**
- * @author Isabelle
- * 17 nov. 2014
- * TODO Pour changer le modèle de ce commentaire de type généré, allez à :
- * Fenêtre - Préférences - Java - Style de code - Modèles de code
- */
 public class JIFMedecinCons extends JIFMedecin  implements ActionListener {
 	
 	/**
@@ -34,7 +22,7 @@ public class JIFMedecinCons extends JIFMedecin  implements ActionListener {
     private JButton suivant;
     private JButton precedent; 
     private JButton dernier; 
-    private ArrayList<Medecin> lesMedecins;
+    private ArrayList<Medecin> lesMedecins;  
 	private int indiceEnCours;
         
     public JIFMedecinCons() {

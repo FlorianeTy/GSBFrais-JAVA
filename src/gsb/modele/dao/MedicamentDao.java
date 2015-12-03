@@ -4,8 +4,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-import javax.swing.JOptionPane;
-
 import gsb.modele.Medicament;
 import gsb.modele.dao.ConnexionMySql;
 
@@ -48,20 +46,6 @@ public class MedicamentDao {
 		ConnexionMySql.fermerConnexionBd();
 		return result;
 	}
-
-	public static int stockVisiteur(String unMatricule) {
-		ResultSet reqSelection = ConnexionMySql.execReqSelection("select ..... from ...... where MATRICULE ='" + unMatricule + "'");
-		int resultat = 0;
-		try {
-			if (reqSelection.next())
-				resultat = 1;
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-		return resultat;
-	}
-
-	
 
 	public static Medicament rechercherMedicament(String depotLegal) {
 		Medicament unMedicament = null;

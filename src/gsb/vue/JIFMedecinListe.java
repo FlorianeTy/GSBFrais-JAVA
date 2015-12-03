@@ -9,6 +9,7 @@ package gsb.vue;
 
 import gsb.modele.Medecin;
 import gsb.modele.dao.MedecinDao;
+import gsb.tests.Application;
 
 import java.awt.Container;
 import java.awt.Dimension;
@@ -42,9 +43,9 @@ public class JIFMedecinListe extends JInternalFrame implements ActionListener {
 	protected JPanel pSaisie;
 	protected JTextField JTcodeMedecin;
 	protected JButton JBafficherFiche;
-	protected MenuPrincipal fenetreContainer;
+	protected Application fenetreContainer;
 
-	public JIFMedecinListeCol(MenuPrincipal uneFenetreContainer) {
+	public JIFMedecinListe(Application uneFenetreContainer) {
 
 		fenetreContainer = uneFenetreContainer;
 		// récupération des données Medecin dans la collection
@@ -97,7 +98,7 @@ public class JIFMedecinListe extends JInternalFrame implements ActionListener {
    		if (source == JBafficherFiche){
    			Medecin unMedecin = MedecinDao.rechercher(JTcodeMedecin.getText());
    			if (unMedecin!=null){
-   	   			fenetreContainer.ouvrirFenetre(new JIFMedecinFiche(unMedecin));
+   	   			fenetreContainer.ouvrirFenetre(new JIFMedecin());
    			}
    		}	
 	}

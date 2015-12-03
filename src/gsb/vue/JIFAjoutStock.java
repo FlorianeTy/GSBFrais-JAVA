@@ -1,7 +1,11 @@
 package gsb.vue;
   
+import gsb.modele.Medicament;
 import gsb.modele.Stockage;
+import gsb.modele.Visiteur;
+import gsb.modele.dao.MedicamentDao;
 import gsb.modele.dao.StockageDao;
+import gsb.modele.dao.VisiteurDao;
 import gsb.tests.Application;
   
 import java.awt.Container;
@@ -11,6 +15,7 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JInternalFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
   
@@ -40,7 +45,7 @@ public class JIFAjoutStock extends JInternalFrame implements ActionListener {
       
   
     public JIFAjoutStock(Application uneFenetreContainer) {
-      
+    	
         fenetreContainer = uneFenetreContainer;
         // récupération des données Medecin dans la collection
          setTitle("Ajout échantillons pour un visiteur");
@@ -83,7 +88,14 @@ public class JIFAjoutStock extends JInternalFrame implements ActionListener {
     public void actionPerformed(ActionEvent arg0) {
         Object source = arg0.getSource();
         if (source == JBajoutStock){
+        	Visiteur unVisiteur = VisiteurDao.rechercher(JTcodeVisiteur.getText());
+        	
+        	//try + catch
+        	int quantite = Integer.parseInt(JTquantite.getText());
+			Medicament unMedicament = MedicamentDao.rechercherMedicament(JTdepotLegal.getText());
+			Stockage unStock = new Stockage(unVisiteur, unMedicament, quantite);
             StockageDao.ajouterStock(unStock);
+            JOptionPane.showInternalMessageDialog(JBajoutStock, "Ajout effectué! :)");
            } 
     }
       

@@ -3,9 +3,6 @@ package gsb.vue;
 import gsb.modele.Medicament;
 import gsb.modele.dao.MedicamentDao;
 import gsb.tests.Application;
-  
-import java.awt.BorderLayout;
-import java.awt.Color;
 import java.awt.Container;
 import java.awt.Dimension;
 import java.awt.event.ActionEvent;
@@ -14,9 +11,8 @@ import java.util.ArrayList;
   
   
 import javax.swing.JButton;
-import javax.swing.JDesktopPane;
-import javax.swing.JFrame;
 import javax.swing.JInternalFrame;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
@@ -43,6 +39,7 @@ public class JIFMedicamentListe extends JInternalFrame implements ActionListener
         // récupération des données Medecin dans la collection
         lesMedicaments = MedicamentDao.retournerCollectionDesMedicaments();
         setTitle("Liste des médicaments");
+        
         int nbLignes = lesMedicaments.size();
   
         JTable table;
@@ -52,14 +49,14 @@ public class JIFMedicamentListe extends JInternalFrame implements ActionListener
         p = new JPanel(); // panneau principal de la fenêtre
   
         int i=0;
-        String[][] data = new String[nbLignes][4] ;
+        String[][] data = new String[nbLignes][3] ;
         for(Medicament unMedicament : lesMedicaments){
             data[i][0] = unMedicament.getDepotLegal();
             data[i][1] = unMedicament.getNomCommercial();
             data[i][2] = unMedicament.getLibelleFamille();
             i++;
             }
-        String[] columnNames = {"Code", "Nom Commercial","Libelle Famille"};
+        String[] columnNames = {"Depot Legal", "Nom Commercial","Libelle Famille"};
         table = new JTable(data, columnNames);
           
         scrollPane = new JScrollPane(table);
@@ -69,6 +66,8 @@ public class JIFMedicamentListe extends JInternalFrame implements ActionListener
         pSaisie = new JPanel();
         JTdepotLegal = new JTextField(20);
         JTdepotLegal.setMaximumSize(JTdepotLegal.getPreferredSize());
+        
+        //JTdepotLegal.setText("code medicament");
         JBafficherFiche = new JButton("Afficher Fiche médicament");
         JBafficherFiche.addActionListener(this);
         pSaisie.add(JTdepotLegal);
@@ -85,15 +84,16 @@ public class JIFMedicamentListe extends JInternalFrame implements ActionListener
     /* (non-Javadoc)
      * @see java.awt.event.ActionListener#actionPerformed(java.awt.event.ActionEvent)
      */
-    @Override
     public void actionPerformed(ActionEvent arg0) {
-        Object source = arg0.getSource();
-        if (source == JBafficherFiche){
-            Medicament unMedicament = MedicamentDao.rechercherMedicament(JTdepotLegal.getText());
-            if (unMedicament!=null){
-                fenetreContainer.ouvrirFenetre(new JIFMedicamentCons());
-            }
-        } 
-    }
-      
+		Object source = arg0.getSource();
+   		if (source == JBafficherFiche){
+   			Medicament unMedicament = MedicamentDao.rechercherMedicament(JTdepotLegal.getText());
+   			if (unMedicament!=null){
+   	   			fenetreContainer.ouvrirFenetre(new JIFMedicament());
+   			} else  {
+   				JOptionPane.showInternalMessageDialog(JTdepotLegal, "Depot Legal valide obligatoire");
+   			}
+   		}	
+	}
+
 }
