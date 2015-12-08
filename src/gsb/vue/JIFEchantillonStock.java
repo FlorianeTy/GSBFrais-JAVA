@@ -55,23 +55,6 @@ public class JIFEchantillonStock extends JIFMedicament implements ActionListener
 		JTcodeVisiteur = new JTextField(20);
 		JTcodeVisiteur.setMaximumSize(JTcodeVisiteur.getPreferredSize());
 		
-		//JTable table;
-
-		/*int i=0;
-		String[][] data = new String[nbLignes][3] ;
-		for(Stockage unStock : lesStocks){
-			data[i][0] = unStock.getUnMedicament().getCodeFamille();
-			data[i][1] = unStock.getUnMedicament().getNomCommercial();
-			data[i][2] = Integer.toString(unStock.getStockQtite());
-			i++;
-			}
-		String[] columnNames = {"Code", "Nom","Prenom","Ville"};
-		table = new JTable(data, columnNames);
-		
-		scrollPane = new JScrollPane(table);
-		scrollPane.setPreferredSize(new Dimension(400, 200));
-		p.add(scrollPane);*/
-
 		pTexte.add(JLcodeVisiteur);
 		pTexte.add(JTcodeVisiteur);
 		
@@ -97,21 +80,24 @@ public class JIFEchantillonStock extends JIFMedicament implements ActionListener
    			JBafficherEchant.setVisible(false);
    			
    			String codeVisiteur = JTcodeVisiteur.getText();
-
+   			
 			ArrayList<Stockage> lesStocks = StockageDao.retournerCollectionDesStocks(codeVisiteur);
 			int nbLignes = lesStocks.size();
-			
 			JTable table;
 			
 			int i=0;
 			String[][] data = new String[nbLignes][3] ;
 			for(Stockage unStock : lesStocks){
-				data[i][0] = unStock.getUnMedicament().getCodeFamille();
+				System.out.println(unStock.getUnMedicament().getDepotLegal());
+				data[i][0] = unStock.getUnMedicament().getDepotLegal();
 				data[i][1] = unStock.getUnMedicament().getNomCommercial();
 				data[i][2] = Integer.toString(unStock.getStockQtite());
 				i++;
-				}
-			String[] columnNames = {"Code", "Nom","Stock"};
+			}
+			
+			
+			
+			String[] columnNames = {"Depot Legal", "Nom","Stock"};
 			table = new JTable(data, columnNames);
 			table.getTableHeader().setReorderingAllowed(false);
 

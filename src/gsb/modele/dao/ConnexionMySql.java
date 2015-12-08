@@ -1,23 +1,10 @@
 package gsb.modele.dao;
 
-
-/*
- * Créé le 23 sept. 2014
- *
- * TODO Pour changer le modèle de ce fichier généré, allez à :
- * Fenêtre - Préférences - Java - Style de code - Modèles de code
- */
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
 
-/**
- * @author Isabelle
- * 23 sept. 2014
- * TODO Pour changer le modèle de ce commentaire de type généré, allez à :
- * Fenêtre - Préférences - Java - Style de code - Modèles de code
- */
 public class ConnexionMySql { // DAO = Data Access Object
 	
 	static Connection cnx;

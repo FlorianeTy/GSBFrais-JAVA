@@ -3,6 +3,7 @@ package gsb.vue;
 import gsb.modele.Medicament;
 import gsb.modele.dao.MedicamentDao;
 import gsb.tests.Application;
+
 import java.awt.Container;
 import java.awt.Dimension;
 import java.awt.event.ActionEvent;
@@ -32,14 +33,12 @@ public class JIFMedicamentListe extends JInternalFrame implements ActionListener
     protected JButton JBafficherFiche;
     protected Application fenetreContainer;
       
-  
     public JIFMedicamentListe(Application uneFenetreContainer) {
-      
-        fenetreContainer = uneFenetreContainer;
-        // récupération des données Medecin dans la collection
-        lesMedicaments = MedicamentDao.retournerCollectionDesMedicaments();
         setTitle("Liste des médicaments");
-        
+        fenetreContainer = uneFenetreContainer;
+        // récupération des données Medicament dans la collection
+        lesMedicaments = MedicamentDao.retournerCollectionDesMedicaments();
+                
         int nbLignes = lesMedicaments.size();
   
         JTable table;
@@ -67,7 +66,6 @@ public class JIFMedicamentListe extends JInternalFrame implements ActionListener
         JTdepotLegal = new JTextField(20);
         JTdepotLegal.setMaximumSize(JTdepotLegal.getPreferredSize());
         
-        //JTdepotLegal.setText("code medicament");
         JBafficherFiche = new JButton("Afficher Fiche médicament");
         JBafficherFiche.addActionListener(this);
         pSaisie.add(JTdepotLegal);
@@ -89,7 +87,7 @@ public class JIFMedicamentListe extends JInternalFrame implements ActionListener
    		if (source == JBafficherFiche){
    			Medicament unMedicament = MedicamentDao.rechercherMedicament(JTdepotLegal.getText());
    			if (unMedicament!=null){
-   	   			fenetreContainer.ouvrirFenetre(new JIFMedicament());
+   	   			fenetreContainer.ouvrirFenetre(new JIFMedicamentFiche(unMedicament));
    			} else  {
    				JOptionPane.showInternalMessageDialog(JTdepotLegal, "Depot Legal valide obligatoire");
    			}

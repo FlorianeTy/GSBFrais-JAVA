@@ -14,7 +14,7 @@ public class TestApplication {
 		
 		try 
 	    {
-	      UIManager.setLookAndFeel(new SyntheticaAluOxideLookAndFeel());
+	      UIManager.setLookAndFeel(new SyntheticaBlackMoonLookAndFeel());
 	    } 
 	    catch (Exception e) 
 	    {

@@ -5,13 +5,13 @@ import gsb.modele.dao.StockageDao;
 
 public class StockageService {
 	
-	public static Stockage rechercher(String reference){
+	public static Stockage rechercher(String matricule, String depotleg){
 		Stockage unStock = null;
 		try{
-		if (reference==null) {
+		if (matricule==null) {
             throw new Exception("Donnée obligatoire : code");
         }
-		unStock = StockageDao.rechercher(reference);
+		unStock = StockageDao.rechercher(matricule, depotleg);
 		}
 		catch(Exception e){
 			System.out.println( e.getMessage());

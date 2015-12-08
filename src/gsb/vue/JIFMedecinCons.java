@@ -1,4 +1,3 @@
-
 package gsb.vue;
 
 import gsb.modele.Medecin;

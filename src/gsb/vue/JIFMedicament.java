@@ -1,10 +1,16 @@
 package gsb.vue;
 
 import gsb.modele.Medicament;
+import gsb.modele.Stockage;
+import gsb.modele.dao.MedicamentDao;
+import gsb.modele.dao.StockageDao;
 import gsb.tests.Application;
 
+import java.awt.BorderLayout;
 import java.awt.Container;
 import java.awt.GridLayout;
+import java.awt.event.ActionEvent;
+import java.util.ArrayList;
 
 import javax.swing.JInternalFrame;
 import javax.swing.JLabel;
@@ -16,6 +22,7 @@ public class JIFMedicament extends JInternalFrame {
 	protected JPanel p;  
 	protected JPanel pTexte;
 	
+	
 	protected JLabel JLdepotLegal;
 	protected JLabel JLnomCommercial;
 	protected JLabel JLcomposition;
@@ -23,6 +30,9 @@ public class JIFMedicament extends JInternalFrame {
 	protected JLabel JLcontreIndication;
 	protected JLabel JLcodeFamille;
 	protected JLabel JLlibelleFamille;
+
+	
+	
 
 	protected JTextField JTdepotLegal;
 	protected JTextField JTnomCommercial;
@@ -33,27 +43,30 @@ public class JIFMedicament extends JInternalFrame {
 	protected JTextField JTlibelleFamille;
     protected Application fenetreContainer;
 
+    private ArrayList<Medicament> lesMedicaments;
 
 	
 	public JIFMedicament() {
-		
-		
 		// déclaration des sources d'évènements
-		setDefaultCloseOperation(HIDE_ON_CLOSE);
 		setTitle("Fiche Médicament");
 
 		p = new JPanel();
 		pTexte = new JPanel(new GridLayout(7, 2));
 
-		
-
 		JLdepotLegal = new JLabel("Depot Legal");
+		JLdepotLegal.setSize(200,150);
 		JLnomCommercial = new JLabel("Nom Commercial");
+		JLnomCommercial.setSize(200,150);
 		JLcomposition = new JLabel("Composition");
+		JLcomposition.setSize(200,150);
 		JLeffets = new JLabel("Effets");
+		JLeffets.setSize(200,150);
 		JLcontreIndication = new JLabel("Contre Indications");
+		JLcontreIndication.setSize(200,150);
 		JLcodeFamille = new JLabel("Code Famille");
+		JLcodeFamille.setSize(200,150);
 		JLlibelleFamille = new JLabel("Libelle Famille");
+		JLcodeFamille.setSize(200,150);
 
 		JTdepotLegal = new JTextField(20);
 		JTdepotLegal.setMaximumSize(JTdepotLegal.getPreferredSize());
@@ -64,7 +77,7 @@ public class JIFMedicament extends JInternalFrame {
 		JTcodeFamille = new JTextField();
 		JTlibelleFamille = new JTextField();
 
-		pTexte.add(JLdepotLegal);
+		pTexte.add(JLdepotLegal, BorderLayout.CENTER);
 		pTexte.add(JTdepotLegal);
 		pTexte.add(JLnomCommercial);
 		pTexte.add(JTnomCommercial);
@@ -97,6 +110,24 @@ public class JIFMedicament extends JInternalFrame {
 		JTlibelleFamille.setText(unMedicament.getLibelleFamille());
 	}
 		
+		public void viderText() 	
+	    {  // méthode qui permet de vider les zones de texte 
+			JTdepotLegal.setText("");
+			JTnomCommercial.setText("");
+			JTcomposition.setText("");
+			JTeffets.setText("");
+			JTcontreIndication.setText("");
+			JTcodeFamille.setText("");
+			JTlibelleFamille.setText("");
+	     }
+		
+		public void actionPerformed(ActionEvent evt) { 
+			Object source = evt.getSource();
+			String depotLegal = JTdepotLegal.getText();
+			Medicament leMedicament = MedicamentDao.rechercherMedicament(depotLegal);
+			remplirText(leMedicament);
+		    	
+		}
 }
 
 	

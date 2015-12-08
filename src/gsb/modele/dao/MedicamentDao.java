@@ -50,7 +50,7 @@ public class MedicamentDao {
 	public static Medicament rechercherMedicament(String depotLegal) {
 		Medicament unMedicament = null;
 		
-		ResultSet reqSelection = ConnexionMySql.execReqSelection("select * from MEDICAMENT where depotLegal='" + depotLegal + "'");
+		ResultSet reqSelection = ConnexionMySql.execReqSelection("select * from MEDICAMENT where DEPOTLEGAL='" + depotLegal + "'");
 		try {
 			if (reqSelection.next()) {
 				unMedicament = new Medicament(reqSelection.getString(1), reqSelection.getString(2), reqSelection.getString(3),
